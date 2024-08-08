@@ -1,0 +1,54 @@
+<div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>CONTACT US</span>
+            </div>
+            <div class="app-contact">CONTACT INFO : +91 040 672 927 322</div>
+          </div>
+          <div class="screen-body-item">
+            <form class="app-form" #form1="ngForm" (ngSubmit)="onFormSubmitHandler(form1)">
+                <div class="app-form-group">
+                    <input ngModel required minlength="5" #fname="ngModel" name="fname" class="app-form-control" placeholder="NAME">
+                    <div *ngIf="fname.touched && fname.invalid" class="text-danger">
+                        <span *ngIf="fname.errors?.['required']">Name is a required Field</span>
+                    </div>
+                  </div>
+    
+                  <div class="app-form-group">
+                    <input ngModel required email #email="ngModel" name="email" class="app-form-control" placeholder="EMAIL">
+                    <div *ngIf="email.touched && email.invalid" class="text-danger">
+                        <span *ngIf="email.errors?.['required']">Email is a required Field</span>
+                        <span *ngIf="email.errors?.['email']">Please enter a valid Email Address</span>
+                    </div>
+                </div>
+    
+                  <div class="app-form-group">
+                    <input ngModel required pattern="[0-9]{10}" #tel="ngModel" name="tel" class="app-form-control" placeholder="CONTACT NO">
+                    <div *ngIf="tel.touched && tel.invalid" class="text-danger">
+                        <span *ngIf="tel.errors?.['required']">Contact is a required Field</span>
+                        <span *ngIf="tel.errors?.['pattern']">Please enter a valid Phone Number with 10-Digits</span>
+                    </div>
+                </div>
+    
+                  <div class="app-form-group message">
+                    <input ngModel required #text="ngModel" name="msg" #msg="ngModel" class="app-form-control" placeholder="MESSAGE">
+                    <div *ngIf="msg.touched && msg.invalid" class="text-danger">
+                        <span *ngIf="msg.errors?.['required']">Message is a required Field</span>
+                    </div>
+                </div>
+    
+                  <div class="app-form-group buttons">
+                    <button [disabled]="form1.invalid" class="app-form-button">SEND</button>
+                  </div>
+
+            </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  

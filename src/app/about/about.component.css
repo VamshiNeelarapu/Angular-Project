@@ -1,0 +1,41 @@
+h2 {
+  color: #fefefe;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* About Section Styles */
+.about-section {
+  background-color: #000000;
+  padding: 3rem 0;
+  color: rgb(190, 189, 189);
+}
+
+.about-section .container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.about-section .row {
+  margin-bottom: 2rem;
+}
+
+.about-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-section .col-lg-12 {
+  text-align: center;
+}

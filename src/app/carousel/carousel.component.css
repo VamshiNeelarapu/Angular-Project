@@ -1,0 +1,46 @@
+.h-carousel {
+  height: 700px !important;
+  width: 100%;
+  position: relative;
+  flex: 1;
+}
+
+.h-carousel img {
+  height: 700px !important;
+  object-fit: cover;
+  width: 100% !important;
+}
+
+.h-container {
+  height: 700px !important;
+}
+
+.hero-container {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.438);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+@media screen and (max-width: 992px) {
+  .h-carousel {
+    position: relative;
+  }
+  .hero-container {
+    position: absolute;
+    text-align: center;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+}

@@ -1,0 +1,36 @@
+<section class="cart">
+  <div *ngIf="cartItems.length > 0" class="container">
+    <h1 class="cart-title">Wish List</h1>
+    <div class="row">
+      <div class="cart-items col-12">
+        <div *ngFor="let item of cartItems" class="cart-item row">
+          <div class="col-4">
+            <img src="{{ item.image }}" alt="Glam Cart" class="img-fluid" />
+          </div>
+          <div class="col-7">
+            <h4>{{ item.title }}</h4>
+            <h5>{{ item.Store }}</h5>
+            <p>₹{{ item.price }}</p>
+            <p>{{ item.description }}</p>
+            <div
+              class="d-flex align-items-center justify-content-start ms-5 mt-2"
+            >
+              <button (click)="addToCart(item)" class="btn btn-danger add-item">
+                Add to Cart
+              </button>
+              <button
+                (click)="removeFromCart(item)"
+                class="btn btn-danger remove-item"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="cartItems.length == 0" class="container">
+    <h1 class="cart-title" style="height: 60vh">Add Something in Wishlist!</h1>
+  </div>
+</section>

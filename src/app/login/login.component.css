@@ -1,0 +1,82 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wrapper {
+  background: linear-gradient(to left, black, rgba(0, 0, 0, 0.539), transparent),
+    url("../../assets/assets/pexels-godisable-jacob-226636-896291.jpg")
+      no-repeat center center/cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+}
+.login-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-out;
+}
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.login-header h1 {
+  color: #333;
+  font-weight: 700;
+}
+.form-control {
+  border-radius: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+.input-group-text {
+  background-color: #f8f9fa;
+  border-right: none;
+  transition: background-color 0.3s ease;
+}
+.form-control:focus + .input-group-text {
+  background-color: #e9ecef;
+}
+.btn-login {
+  background-color: #000000 !important;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.btn-login:hover {
+  background-color: #2e59d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 89, 217, 0.2);
+}
+.form-check-input {
+  cursor: pointer;
+}
+.forgot-password {
+  transition: color 0.3s ease;
+}
+.forgot-password:hover {
+  color: #4e73df !important;
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    background: url("../../assets/images/bg.jpg") no-repeat center center/cover;
+  }
+}

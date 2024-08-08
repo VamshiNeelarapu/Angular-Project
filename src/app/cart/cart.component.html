@@ -1,0 +1,101 @@
+<section class="cart">
+  <div *ngIf="cartItems.length > 0" class="container">
+    <h1 class="cart-title">Your Orders</h1>
+    <div class="row">
+      <div class="cart-items col-8">
+        <div *ngFor="let item of cartItems" class="cart-item row">
+          <div class="col-md-3">
+            <img src="{{ item.image }}" alt="Glam Cart" class="img-fluid" />
+          </div>
+          <div class="col-md-6 item-details">
+            <h4>{{ item.title }}</h4>
+            <h5>{{ item.Store }}</h5>
+            <p>₹{{ item.price }}</p>
+            <!-- <p>{{ item.description }}</p> -->
+            <div
+              class="col-md-3 d-flex align-items-center justify-content-end ms-5 mt-2"
+            >
+              <input
+                type="number"
+                (change)="updatePrice($event, item)"
+                value="{{ item.quantity }}"
+                min="1"
+                class="form-control me-3"
+              />
+              <button
+                (click)="removeFromCart(item)"
+                class="btn btn-danger remove-item"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-summary col-4">
+        <h3>Checkout</h3>
+        <p>
+          Order Value: <span class="subtotal">₹{{ totalPrice }}</span>
+        </p>
+        <p>Delivery: ₹50</p>
+        <p>
+          Total: <span class="subtotal">₹{{ totalPrice + 50 }}</span>
+        </p>
+
+        <form action="">
+          <!-- <p>Cardholder Name</p> -->
+          <input
+            type="text"
+            class="inputbox form-control"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <!-- <p>Card Number</p> -->
+          <input
+            type="number"
+            class="inputbox form-control"
+            name="card_number"
+            id="card_number"
+            placeholder="XXXX XXXX XXXX"
+            style="width: 100%; text-align: start; margin: 20px 0"
+            required
+          />
+          <!-- <p class="expcvv_text2">CVV</p> -->
+          <input
+            type="password"
+            class="inputbox form-control"
+            name="cvv"
+            id="cvv"
+            placeholder="CVV"
+            required
+          />
+
+          <div class="expcvv">
+            <!-- <p class="expcvv_text">Expiry</p> -->
+            <input
+              type="date"
+              class="inputbox form-control mt-2 mb-4"
+              name="exp_date"
+              id="exp_date"
+              required
+            />
+          </div>
+        </form>
+
+        <button class="btn btn-dark checkout-btn" (click)="checkout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="cartItems.length == 0" class="container">
+    <h1 class="cart-title">Oops! Nothing in cart</h1>
+    <img
+      src="../../assets/images/cart.jpg"
+      alt="Running Shoes"
+      height="200"
+      class="rounded mx-auto d-block"
+    />
+  </div>
+</section>

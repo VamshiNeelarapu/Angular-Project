@@ -1,0 +1,13 @@
+ul li {
+  list-style: none;
+}
+
+.footer-list-hover:hover {
+  color: rgb(240, 239, 239) !important;
+  transition: 0.2s color ease;
+  cursor: pointer;
+}
+
+.container-fluid {
+  background-color: rgb(19, 19, 19) !important;
+}
